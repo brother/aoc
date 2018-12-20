@@ -1,0 +1,7 @@
+0,0:abcdef
+1,1:bababc
+1,0:abbcde
+0,1:abcccd
+1,0:aabcdd
+1,0:abcdee
+0,1:ababab
