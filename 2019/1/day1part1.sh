@@ -13,7 +13,7 @@ fi
 total=0
 while read -r line; do
 	value=${line%,*}
-	need=$(($(($value/3))-2))
+	need=$(($((value/3))-2))
 	echo $need
 	total=$((need+total))
 done < "$filename"
