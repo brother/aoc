@@ -45,10 +45,6 @@ for line in "${values[@]}"; do
 	fi
 	integer="$first$last"
 	sum=$(( sum + integer ))
-
-	# reset and find next integer
-	first=x
-	last=x
 done
 
 echo "The value totals to: $sum"
