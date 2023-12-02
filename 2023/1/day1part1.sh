@@ -20,24 +20,18 @@ for line in "${values[@]}"; do
 	for ((i=0;i<${#line};i++)); do
 		position=${line:$i:1}
 		if [[ $position =~ [0-9] ]]; then
-			#echo "$position"
-			if [[ $first == x ]]; then
-				first=$position
-			else
-				last=$position
-			fi
+			first=$position
+			break
 		fi
 	done
 
-	if [[ $first == x ]]; then
-		# no digits in line
-		continue
-	fi
-
-	if [[ $last == x ]]; then
-		# only one digit found
-		last=$first
-	fi
+	for ((j=${#line};j>0;j--)); do
+		position=${line:$((j-1)):1}
+		if [[ $position =~ [0-9] ]]; then
+			last=$position
+			break
+		fi
+	done
 
 	if [[ $testmode == "true" ]]; then
 		echo "$line"
